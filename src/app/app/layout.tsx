@@ -14,30 +14,34 @@ export default function AppLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="flex min-h-dvh min-h-screen bg-gradient-to-br from-zinc-950 via-slate-900 to-zinc-950 font-sans text-zinc-100">
-      <aside className="flex w-56 shrink-0 flex-col border-r border-zinc-800 bg-zinc-950/80 p-4">
-        <Link
-          href="/"
-          className="mb-6 font-semibold text-amber-500 hover:text-amber-400"
-        >
-          ← cryptvine.dev
-        </Link>
-        <nav className="flex flex-col gap-1">
-          <span className="mb-2 text-xs font-medium uppercase tracking-wider text-zinc-500">
-            Demos
-          </span>
-          {DEMOS.map(({ slug, label }) => (
-            <Link
-              key={slug}
-              href={`/app/${slug}`}
-              className="rounded-md px-3 py-2 text-sm text-zinc-300 transition hover:bg-zinc-800 hover:text-zinc-100"
-            >
-              {label}
-            </Link>
-          ))}
-        </nav>
+    <div className="flex min-h-dvh min-h-screen flex-col bg-gradient-to-br from-zinc-950 via-slate-900 to-zinc-950 font-sans text-zinc-100 md:flex-row">
+      {/* Sidebar: compact top bar on mobile, full sidebar from md up */}
+      <aside className="shrink-0 border-b border-zinc-800 bg-zinc-950/80 pt-[env(safe-area-inset-top)] md:w-56 md:border-b-0 md:border-r md:pt-0 md:p-4">
+        <div className="flex items-center gap-2 overflow-x-auto px-3 py-2 md:flex-col md:items-stretch md:gap-0 md:overflow-visible md:px-0 md:py-0">
+          <Link
+            href="/"
+            className="shrink-0 font-semibold text-amber-500 hover:text-amber-400 md:mb-6"
+          >
+            ← cryptvine.dev
+          </Link>
+          <nav className="flex gap-1 overflow-x-auto pb-1 md:flex-col md:overflow-visible md:pb-0">
+            <span className="hidden shrink-0 text-xs font-medium uppercase tracking-wider text-zinc-500 md:mb-2 md:block">
+              Demos
+            </span>
+            {DEMOS.map(({ slug, label }) => (
+              <Link
+                key={slug}
+                href={`/app/${slug}`}
+                className="shrink-0 rounded-md px-3 py-2 text-sm text-zinc-300 transition hover:bg-zinc-800 hover:text-zinc-100"
+              >
+                {label}
+              </Link>
+            ))}
+          </nav>
+        </div>
       </aside>
-      <main className="flex-1 overflow-auto p-8">
+      {/* Main: gets majority of screen on all sizes */}
+      <main className="min-h-0 flex-1 overflow-auto p-4 pb-[max(1rem,env(safe-area-inset-bottom))] sm:p-6 md:p-8">
         {children}
       </main>
     </div>
