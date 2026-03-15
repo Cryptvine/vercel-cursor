@@ -18,12 +18,6 @@ export default function AppLayout({
       {/* Sidebar: compact top bar on mobile, full sidebar from md up */}
       <aside className="shrink-0 border-b border-zinc-800 bg-zinc-950/80 pt-[env(safe-area-inset-top)] md:w-56 md:border-b-0 md:border-r md:pt-0 md:p-4">
         <div className="flex items-center gap-2 overflow-x-auto px-3 py-2 md:flex-col md:items-stretch md:gap-0 md:overflow-visible md:px-0 md:py-0">
-          <Link
-            href="/"
-            className="shrink-0 font-semibold text-amber-500 hover:text-amber-400 md:mb-6"
-          >
-            ← cryptvine.dev
-          </Link>
           <nav className="flex gap-1 overflow-x-auto pb-1 md:flex-col md:overflow-visible md:pb-0">
             <span className="hidden shrink-0 text-xs font-medium uppercase tracking-wider text-zinc-500 md:mb-2 md:block">
               Demos
