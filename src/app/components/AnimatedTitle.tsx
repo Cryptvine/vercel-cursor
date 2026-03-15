@@ -19,7 +19,10 @@ export default function AnimatedTitle({ href }: { href?: string } = {}) {
   return (
     <h1 className={className}>
       {href ? (
-        <Link href={href} className="hover:opacity-90 transition-opacity focus:outline-none focus:ring-2 focus:ring-amber-500/50 rounded">
+        <Link
+          href={href}
+          className="inline-flex min-h-[48px] min-w-[48px] cursor-pointer touch-manipulation items-center justify-center rounded py-3 px-4 transition-opacity hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-amber-500/50 [-webkit-tap-highlight-color:rgba(245,158,11,0.2)]"
+        >
           {titleContent}
         </Link>
       ) : (
