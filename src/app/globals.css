@@ -104,3 +104,74 @@ body {
 .animate-pulse-out {
   animation: pulse-out 2s ease-in-out infinite;
 }
+
+/* Landing — neon panel + scanline (cryptvine.dev) */
+@keyframes coming-soon-border-shift {
+  0%,
+  100% {
+    opacity: 0.45;
+  }
+  50% {
+    opacity: 0.95;
+  }
+}
+
+.coming-soon-panel {
+  box-shadow:
+    0 0 1px rgba(0, 255, 255, 0.35),
+    0 0 40px rgba(255, 0, 255, 0.18),
+    0 0 80px rgba(0, 255, 255, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+
+.coming-soon-border-glow {
+  animation: coming-soon-border-shift 4s ease-in-out infinite;
+}
+
+/* cryptvine.dev — soft scrolling theme colors (L → R, seamless loop) */
+@keyframes cryptvine-shimmer-slide {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    /* Must match one full repeat tile (see stops below) */
+    background-position: 420px 0;
+  }
+}
+
+.cryptvine-shimmer {
+  color: transparent;
+  /* One full cycle; motion = exactly one period → seamless repeat */
+  background-image: repeating-linear-gradient(
+    90deg,
+    #5eead4 0px,
+    #67e8f9 52px,
+    #cffafe 104px,
+    #fae8ff 156px,
+    #e879f9 208px,
+    #d946ef 260px,
+    #22d3ee 312px,
+    #5eead4 364px,
+    #5eead4 420px
+  );
+  background-size: auto 100%;
+  background-position: 0 0;
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: cryptvine-shimmer-slide 16s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cryptvine-shimmer {
+    animation: none;
+    background-image: linear-gradient(
+      90deg,
+      #67e8f9,
+      #fae8ff,
+      #e879f9,
+      #22d3ee
+    );
+    background-size: 100% 100%;
+    background-position: 50% 50%;
+  }
+}
