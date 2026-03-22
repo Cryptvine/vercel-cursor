@@ -17,7 +17,7 @@ export default function Home() {
         aria-hidden
       />
 
-      <main className="relative z-10 flex min-h-dvh flex-col items-center justify-center px-5 py-12">
+      <main className="relative z-10 flex min-h-dvh flex-col items-center justify-start px-5 pb-12 pt-6 md:pt-8">
         <div className="coming-soon-panel relative w-full max-w-lg overflow-hidden rounded-2xl border border-[#39FF14]/22 bg-[#050806]/72 px-8 py-9 backdrop-blur-xl md:px-10 md:py-10">
           {/* Animated top accent line */}
           <div
