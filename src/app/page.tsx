@@ -4,8 +4,8 @@ export default function Home() {
   return (
     <div className="relative min-h-dvh min-h-screen w-full overflow-hidden bg-[#050806] safe-area-inset">
       <Image
-        src="/greenblack_background.png"
-        alt="Cryptvine dashboard illustration"
+        src="/minimal_dark_background.png"
+        alt="Cryptvine — minimal infrastructure background"
         fill
         priority
         className="object-cover object-center"
